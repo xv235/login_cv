@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Doe's Personal Website</title>
+    <!-- MathJax Configuration -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --light-gray: #ecf0f1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--primary-color);
+        }
+
+        nav {
+            background: var(--primary-color);
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        .section {
+            padding: 5rem 2rem;
+            min-height: 100vh;
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        /* CV Styles */
+
+        .cv-item {
+            margin-bottom: 2rem;
+            background: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 5px;
+        }
+
+        /* Tech Notes Styles */
+        
+        .tech-note {
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--secondary-color);
+            padding-left: 1rem;
+        }
+
+        /* Contact Styles */
+
+        .contact-info {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            margin: 1.5rem 0;
+            font-size: 1.2rem;
+        }
+
+        .contact-item a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--secondary-color);
+            border-radius: 5px;
+        }
+
+        .contact-item a:hover {
+            color: var(--secondary-color);
+            background-color: var(--light-gray);
+        }
+
+        .contact-item i {
+            margin-right: 0.8rem;
+            color: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#cv" onclick="showSection('cv')">CV</a></li>
+            <li><a href="#tech-notes" onclick="showSection('tech-notes')">Tech Notes</a></li>
+            <li><a href="#contact" onclick="showSection('contact')">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- CV Section -->
+    <section id="cv" class="section active">
+        <div class="container">
+            <h1>John Doe - Curriculum Vitae</h1>
+            
+            <div class="cv-item">
+                <h2>Education</h2>
+                <h3>PhD in Computer Science</h3>
+                <p>Stanford University | 2015-2019</p>
+                <p>Thesis: Advanced Algorithms for Distributed Systems</p>
+            </div>
+
+            <div class="cv-item">
+                <h2>Experience</h2>
+                <h3>Senior Software Engineer</h3>
+                <p>Tech Corp Inc. | 2020-Present</p>
+                <ul>
+                    <li>Led development of distributed systems</li>
+                    <li>Managed team of 15 developers</li>
+                    <li>Implemented machine learning pipelines</li>
+                </ul>
+            </div>
+
+            <div class="cv-item">
+                <h2>Skills</h2>
+                <ul>
+                    <li>Python, JavaScript, Go</li>
+                    <li>Machine Learning</li>
+                    <li>Distributed Systems</li>
+                    <li>Cloud Architecture</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Notes Section -->
+    <section id="tech-notes" class="section">
+        <div class="container">
+            <h1>Technical Notes</h1>
+            
+            <div class="tech-note">
+                <h2>Machine Learning Basics</h2>
+                <p>The fundamental equation for linear regression:</p>
+                <p>\[ h_\theta(x) = \theta_0 + \theta_1 x_1 + \theta_2 x_2 + \cdots + \theta_n x_n \]</p>
+            </div>
+
+            <div class="tech-note">
+                <h2>Quantum Computing Basics</h2>
+                <p>Qubit state representation:</p>
+                <p>\[ |\psi\rangle = \alpha|0\rangle + \beta|1\rangle \]</p>
+                <p>Where \( \alpha \) and \( \beta \) are complex numbers satisfying \( |\alpha|^2 + |\beta|^2 = 1 \).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h1>Contact Me</h1>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:john.doe@email.com">john.doe@email.com</a>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <a href="https://github.com/johndoe" target="_blank">GitHub Profile</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Show initial section
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('cv');
+        });
+
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+
+            // Update navigation active state
+            document.querySelectorAll('nav a').forEach(link => {
+                link.style.color = link.getAttribute('href') === `#${sectionId}` 
+                    ? 'var(--secondary-color)' 
+                    : 'white';
+            });
+        }
+    </script>
+</body>
+</html>
